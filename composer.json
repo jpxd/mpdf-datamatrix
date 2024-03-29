@@ -1,28 +1,25 @@
 {
 
-	"name": "mpdf/qrcode",
+	"name": "jpxd/mpdf-datamatrix-code",
 	"type": "library",
 
-	"description": "QR code generator for mPDF",
+	"description": "Datamatrix code generator for mPDF",
 
-	"keywords": ["php", "pdf", "mpdf", "qr", "qrcode"],
+	"keywords": ["php", "pdf", "mpdf", "datamatrix"],
 
 	"license": "LGPL-2.1-or-later",
 
 	"authors": [
 		{
-			"name": "Matěj Humpál",
+			"name": "Jan Dahms",
 			"role": "maintainer"
-		},
-		{
-			"name": "Laurent Minguet",
-			"role": "author"
 		}
 	],
 
 	"require": {
 		"php": "^5.6 || ^7.0 || ^8.0",
-		"paragonie/random_compat": "^1.4|^2.0|^9.99.99"
+		"paragonie/random_compat": "^1.4|^2.0|^9.99.99",
+		"tecnickcom/tcpdf": "^6.7"
 	},
 
 	"require-dev": {
@@ -39,14 +36,14 @@
 	},
 
 	"suggest": {
-		"ext-gd": "To output QR codes to PNG files",
-		"ext-simplexml": "To output QR codes to SVG files"
+		"ext-gd": "To output Datamatrix codes to PNG files",
+		"ext-simplexml": "To output Datamatrix codes to SVG files"
 	},
 
 	"autoload": {
 
 		"psr-4": {
-			"Mpdf\\QrCode\\": "src/"
+			"Mpdf\\DatamatrixCode\\": "src/"
 		}
 
 	},

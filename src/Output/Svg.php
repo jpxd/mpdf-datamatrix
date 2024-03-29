@@ -1,33 +1,28 @@
 <?php
 
-namespace Mpdf\QrCode\Output;
+namespace Mpdf\DatamatrixCode\Output;
 
-use Mpdf\QrCode\QrCode;
+use Mpdf\DatamatrixCode\DatamatrixCode;
 use SimpleXMLElement;
 
 class Svg
 {
 	
 	/**
-	 * @param QrCode $qrCode	 QR code instance
+	 * @param DatamatrixCode $datamatrix	 DatamatrixCode instance
 	 * @param int	$size	   The width / height of the resulting SVG
 	 * @param string $background The background color, e. g. "white", "rgb(0,0,0)" or "cmyk(0,0,0,0)"
 	 * @param string $color	  The foreground and border color, e. g. "black", "rgb(255,255,255)" or "cmyk(0,0,0,100)"
 	 *
 	 * @return string Binary image data
 	 */
-	public function output(QrCode $qrCode, $size = 100, $background = 'white', $color = 'black')
+	public function output(DatamatrixCode $datamatrix, $size = 100, $background = 'white', $color = 'black')
 	{
-		$qrSize = $qrCode->getQrSize();
-		$final  = $qrCode->getFinal();
+		$datamatrixSize = $datamatrix->getDatamatrixSize();
+		$final  = $datamatrix->getFinal();
 
-		if ($qrCode->isBorderDisabled()) {
-			$minSize = 4;
-			$maxSize = $qrSize - 4;
-		} else {
-			$minSize = 0;
-			$maxSize = $qrSize;
-		}
+		$minSize = 0;
+		$maxSize = $datamatrixSize;
 
 		$rectSize = $size / ($maxSize - $minSize);
 
@@ -55,7 +50,7 @@ class Svg
 			$y = ($row - $minSize) * $rectSize;
 			for ($column = $minSize; $column < $maxSize; $column++) {
 				$x = ($column - $minSize) * $rectSize;
-				if ($final[$column + $row * $qrSize + 1]) {
+				if ($final[$column + $row * $datamatrixSize]) {
 					if ($startX === null) {
 						$startX = $x;
 					}
@@ -97,7 +92,7 @@ class Svg
 			$x	  = ($column - $minSize) * $rectSize;
 			for ($row = $minSize; $row < $maxSize; $row++) {
 				$y = ($row - $minSize) * $rectSize;
-				if ($final[$column + $row * $qrSize + 1]) {
+				if ($final[$column + $row * $datamatrixSize]) {
 					if ($startY === null) {
 						$startY = $y;
 					}
