@@ -25,12 +25,11 @@ class Mpdf
 		$datamatrixSize = $datamatrixCode->getDatamatrixSize();
 		$s = $size / $datamatrixCode->getDatamatrixSize();
 
-		$mpdf->SetDrawColor($color[0], $color[1], $color[2]);
 		$mpdf->SetFillColor($background[0], $background[1], $background[2]);
 
 		$minSize = 0;
 		$maxSize = $datamatrixSize;
-		$mpdf->Rect($x, $y, $size, $size, 'FD');
+		$mpdf->Rect($x, $y, $size, $size, 'F');
 
 		$mpdf->SetFillColor($color[0], $color[1], $color[2]);
 
