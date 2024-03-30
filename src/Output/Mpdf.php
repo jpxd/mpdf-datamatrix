@@ -11,7 +11,7 @@ class Mpdf
 	/**
 	 * Write the DatamatrixCode into an Mpdf\Mpdf object
 	 *
-	 * @param \Mpdf\Datamatrix\DatamatrixCode $qrCode DatamatrixCode instance
+	 * @param \Mpdf\DatamatrixCode\DatamatrixCode $qrCode DatamatrixCode instance
 	 * @param \Mpdf\Mpdf $mpdf Mpdf instance
 	 * @param float $x position X
 	 * @param float $y position Y

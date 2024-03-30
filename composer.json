@@ -1,6 +1,6 @@
 {
 
-	"name": "jpxd/mpdf-datamatrix-code",
+	"name": "jpxd/mpdf-datamatrix",
 	"type": "library",
 
 	"description": "Datamatrix code generator for mPDF",
