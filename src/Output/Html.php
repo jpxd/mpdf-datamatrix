@@ -22,7 +22,7 @@ class Html
 		$minSize = 0;
 		$maxSize = $datamatrixSize;
 
-		$s .= '<table class="qr" cellpadding="0" cellspacing="0" style="font-size: 1px;">' . "\n";
+		$s .= '<table class="datamatrix" cellpadding="0" cellspacing="0" style="font-size: 1px;">' . "\n";
 
 		for ($y = $minSize; $y < $maxSize; $y++) {
 			$s .= '<tr style="height: 4px;">';

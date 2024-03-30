@@ -2,8 +2,6 @@
 
 Datamatrix code generating library with HTML/PNG/mPDF output possibilities.
 
-[![Build Status](https://travis-ci.org/mpdf/qrcode.svg?branch=development)](https://travis-ci.org/mpdf/mpdf)
-
 This is based on TCPDF Datamatrix class. It is provided under LGPL license.
 
 ## Installation
@@ -17,8 +15,8 @@ $ composer require jpxd/mpdf-datamatrix-code
 ```php
 <?php
 
-use Mpdf\QrCode\Datamatrix;
-use Mpdf\QrCode\Output;
+use Mpdf\DatamatrixCode\Datamatrix;
+use Mpdf\DatamatrixCode\Output;
 
 $datamatrixCode = new DatamatrixCode('Lorem ipsum sit dolor');
 
