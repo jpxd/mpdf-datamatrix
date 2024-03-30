@@ -33,4 +33,9 @@ echo $output->output($datamatrixCode, 100, 'white', 'black');
 // Echo an HTML table
 $output = new Output\Html();
 echo $output->output($datamatrixCode);
+
+// Draw the code on an mPDF object
+$mpdf = new \Mpdf\Mpdf();
+$output = new Output\Mpdf();
+$output->output($datamatrixCode, $mpdf, 20, 40, 10, [255, 255, 255], [0, 0, 0]);
 ```

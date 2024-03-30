@@ -17,7 +17,6 @@ class MpdfTest extends \Yoast\PHPUnitPolyfills\TestCases\TestCase
 
 		$mpdf = Mockery::mock('Mpdf\Mpdf');
 
-		$mpdf->shouldReceive('SetDrawColor')->once();
 		$mpdf->shouldReceive('SetFillColor')->twice();
 		$mpdf->shouldReceive('Rect')->times(143);
 
